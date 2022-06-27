@@ -25,6 +25,6 @@ jobs:
         run: 
             python post_message_test.py
         env:
-            APP_LEVEL_TOKEN:${{ secrets.APP_LEVEL_TOKEN }}
-            BOT_USER_OAUTH_TOKEN:${{ secrets.BOT_USER_OAUTH_TOKEN }}
+            APP_LEVEL_TOKEN: ${{secrets.APP_LEVEL_TOKEN}}
+            BOT_USER_OAUTH_TOKEN: ${{secrets.BOT_USER_OAUTH_TOKEN}}
 
