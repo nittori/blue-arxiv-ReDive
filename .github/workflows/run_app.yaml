@@ -26,7 +26,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run Python
         run: 
-            python post_message_test.py
+            python app.py
         env:
             SLACK_APP_TOKEN: ${{secrets.APP_LEVEL_TOKEN}}
             SLACK_BOT_TOKEN: ${{secrets.BOT_USER_OAUTH_TOKEN}}
