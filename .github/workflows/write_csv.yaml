@@ -25,7 +25,7 @@ jobs:
     - name: CSV commit
       run: |
           git config --global user.email ${{secrets.EMAIL}}
-          git config --global user.name ${{secrets.NAME}}
+          git config --global user.name ${{secrets.USER_NAME}}
           git add csv.csv
           git commit -m "add CSV"
           git push origin main
