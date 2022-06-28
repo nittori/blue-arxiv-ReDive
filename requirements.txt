@@ -280,7 +280,7 @@ pywavelets=1.1.1=py39h080aedc_4
 pywin32=228=py39he774522_0
 pywin32-ctypes=0.2.0=py39haa95532_1000
 pywinpty=0.5.7=py39haa95532_0
-pyyaml=6.0=py39h2bbff1b_1
+pyyaml==5.3.1
 pyzmq=22.2.1=py39hd77b12b_1
 qdarkstyle=3.0.2=pyhd3eb1b0_0
 qstylizer=0.1.10=pyhd3eb1b0_0
