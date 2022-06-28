@@ -1,8 +1,6 @@
 name: run-CSVCreate-python
 
 on:   
-  push:
-    branches: [main]
   workflow_dispatch:
     branches: [main]
 
@@ -28,6 +26,6 @@ jobs:
       run: |
           git config --global user.email ${{secrets.EMAIL}}
           git config --global user.name ${{secrets.USER_NAME}}
-          git add paper_database.csv
+          git add data/paper_database.csv
           git commit -m "add csv"
           git push origin main
