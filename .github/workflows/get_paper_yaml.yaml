@@ -21,7 +21,7 @@ jobs:
     - name: Run python
       run: |
           python3 -m pip install pyyaml 
-          python get_paper_ver2.py
+          python get_paper.py
     - name: CSV commit
       run: |
           git config --global user.email ${{secrets.EMAIL}}
