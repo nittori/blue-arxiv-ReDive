@@ -1,4 +1,4 @@
-name: get_paper_yaml
+name: run_blue_arxiv_yaml
 
 on:   
   workflow_dispatch:
@@ -19,13 +19,6 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Run python
-      run: |
-          python3 -m pip install pyyaml 
-          python get_paper_ver2.py
-    - name: CSV commit
-      run: |
-          git config --global user.email ${{secrets.EMAIL}}
-          git config --global user.name ${{secrets.USER_NAME}}
-          git add data/paper_database.csv
-          git commit -m "add csv"
-          git push origin main
+      env:
+          channel_id: ${{secrets.CHANNEL_ID}}
+      run:  python post_message_test.py
