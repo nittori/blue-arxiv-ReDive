@@ -1,29 +1,31 @@
-name: run_blue_arxiv_yaml
+name: Action Sample
 
-on:   
+on:
+  #push:
+  #  branches: [main]
+  #pull_request:
   workflow_dispatch:
     branches: [main]
 
 jobs:
-  build:
+  numpy-test:
     runs-on: ubuntu-latest
-    env:
-     token: ${{secrets.GITHUB_TOKEN}}
-     repo: ${{github.repository}}
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
         with:
           python-version: '3.8'
           architecture: 'x64'
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-    - name: Run python
-      env:
-          channel_id: ${{secrets.CHANNEL_ID}}
-          SLACK_APP_TOKEN: ${{secrets.APP_LEVEL_TOKEN}}
-          SLACK_BOT_TOKEN: ${{secrets.BOT_USER_OAUTH_TOKEN}}
-      run:  python post_message_test.py
-
+      - name: Get Python version
+        run: python -V
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run Python
+        run: 
+            python post_message_test.py
+        env:
+            SLACK_APP_TOKEN: ${{secrets.APP_LEVEL_TOKEN}}
+            SLACK_BOT_TOKEN: ${{secrets.BOT_USER_OAUTH_TOKEN}}
+            channel_id: ${{secrets.CHANNEL_ID}}
 
