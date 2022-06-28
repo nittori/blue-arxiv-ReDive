@@ -19,11 +19,11 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Run python
-      run: python createCSV.py
+      run: python get_paper_ver2.py
     - name: CSV commit
       run: |
           git config --global user.email ${{secrets.EMAIL}}
           git config --global user.name ${{secrets.USER_NAME}}
-          git add csv.csv
+          git add paper_database.csv
           git commit -m "add csv"
           git push origin main
