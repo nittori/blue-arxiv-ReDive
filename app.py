@@ -36,7 +36,7 @@ def main():
             message = f"author : {paper['author']}\n"+\
                       f"publish_date : {paper['published']}\n"+\
                       f"title : {paper['title']}\n"+\
-                      f"url : {paper['urls']}\n"
+                      f"url : {paper['url']}\n"
             print(message)
             #post_message(message)
         return 1
