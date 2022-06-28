@@ -19,8 +19,7 @@ jobs:
       with:
         python-version: '3.9'
     - name: Install dependencies
-      run: |
-        run: pip install -r requirements.txt
+      run: pip install -r requirements.txt
     - name: Run python
       run: python createCSV.py
     - name: CSV commit
