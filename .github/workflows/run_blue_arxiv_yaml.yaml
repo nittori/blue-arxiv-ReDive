@@ -1,14 +1,14 @@
-name: Action Sample
+name: run_blue_arxiv_yaml
 
 on:
-  push:
-    branches: [main]
+  #push:
+    #branches: [main]
   #pull_request:
   workflow_dispatch:
     branches: [main]
 
 jobs:
-  numpy-test:
+  run-main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

@@ -11,7 +11,7 @@ import datetime
 client = WebClient(token=os.environ.get("SLACK_BOT_TOKEN"))
 logger = logging.getLogger(__name__)
 # ID of the channel you want to send the message to
-channel_id = "C035JT6MNN9"#slackのチャンネルID
+channel_id = os.environ.get("channel_id")#slackのチャンネルID
 
 def post_message(message):
     try:
