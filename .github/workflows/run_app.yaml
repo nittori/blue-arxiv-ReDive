@@ -1,4 +1,4 @@
-name: run_blue_arxiv_yaml_test
+name: run_app_yaml
 
 on:
   #push:
@@ -10,6 +10,9 @@ on:
 jobs:
   run-main:
     runs-on: ubuntu-latest
+    env:
+     token: ${{secrets.GITHUB_TOKEN}}
+     repo: ${{github.repository}}
     steps:
       - uses: actions/checkout@v2
       - name: Setup Python
@@ -28,4 +31,11 @@ jobs:
             SLACK_APP_TOKEN: ${{secrets.APP_LEVEL_TOKEN}}
             SLACK_BOT_TOKEN: ${{secrets.BOT_USER_OAUTH_TOKEN}}
             channel_id: ${{secrets.CHANNEL_ID}}
+       - name: CSV commit
+         run: |
+             git config --global user.email ${{secrets.EMAIL}}
+             git config --global user.name ${{secrets.USER_NAME}}
+             git add data/paper_database.csv
+             git commit -m "add csv"
+             git push origin main
 
