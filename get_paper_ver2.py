@@ -30,7 +30,7 @@ def read_db(file_dir):
     return post_ids
 
 def write_db(file_dir,new_ids):
-    db_path = f'{file_dir}/paper_database.csv'
+    db_path = f'{file_dir}/data/paper_database.csv'
     with open(db_path,"a",newline='') as f: 
         writer = csv.writer(f) 
         for s_id in new_ids:
