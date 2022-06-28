@@ -1,6 +1,8 @@
 name: run-CSVCreate-python
 
-on: 
+on:   
+  push:
+    branches: [main]
   workflow_dispatch:
     branches: [main]
 
@@ -20,7 +22,7 @@ jobs:
       run: pip install -r requirements.txt
     - name: Run python
       run: |
-          python -m pip install pyyaml 
+          python3 -m pip install pyyaml 
           python get_paper_ver2.py
     - name: CSV commit
       run: |
