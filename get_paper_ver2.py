@@ -11,7 +11,7 @@ def au_search(author):
 
 def read_config(file_dir):
     
-    config_path = f'{file_dir}/authors_config.yaml' # file dir
+    config_path = f'{file_dir}/config/authors_config.yaml' # file dir
     with open(config_path, 'r') as yml:
         authors = yaml.safe_load(yml)
         
