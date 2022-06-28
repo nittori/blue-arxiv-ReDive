@@ -37,7 +37,7 @@ def write_db(file_dir,new_ids):
             writer.writerow([s_id])
     f.close()
 
-def check_database(file_dir,s_id):
+def check_db(file_dir,s_id):
     post_ids = read_db(file_dir)
     
     if s_id in post_ids:
@@ -50,7 +50,7 @@ import datetime
 from dateutil import tz
 timefilter_threshold = 1
 
-def time_filter(published):
+def time_filter(published):# not use 
     JST = tz.gettz('Asia/Tokyo')
     UTC = tz.gettz("UTC")
 
@@ -85,7 +85,7 @@ def get_paper():
                  "published" : result.published,\
                  "url" : result.pdf_url }
             
-        if check_database(file_dir, s_id):
+        if check_db(file_dir, s_id):
             papers.append(paper)
             new_ids.append(s_id)
     if len(new_ids) == 0:
