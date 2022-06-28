@@ -1,0 +1,30 @@
+name: run-CSVCreate-python
+
+on: 
+  workflow_dispatch:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+     token: ${{secrets.GITHUB_TOKEN}}
+     repo: ${{github.repository}}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: |
+        run: pip install -r requirements.txt
+    - name: Run python
+      run: python createCSV.py
+    - name: CSV commit
+      run: |
+          git config --global user.email ${{secrets.EMAIL}}
+          git config --global user.name ${{secrets.NAME}}
+          git add csv.csv
+          git commit -m "add CSV"
+          git push origin main
