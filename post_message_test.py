@@ -29,7 +29,7 @@ path=os.getcwd()#現在のワーキングディレクトリを取得
 today = datetime.date.today()#PCの時間
 
 post_message("=======================\n"+\
-             f"test_message working dir{path}\n"+\
+             f"test_message working dir on {path}\n"+\
              "=======================\n")
 
     
