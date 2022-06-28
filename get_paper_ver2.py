@@ -18,7 +18,7 @@ def read_config(file_dir):
     return authors["authors"]
 
 def read_db(file_dir):
-    db_path = f'{file_dir}/paper_database.csv'
+    db_path = f'{file_dir}/data/paper_database.csv'
     
     post_ids = []
     
