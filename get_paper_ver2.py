@@ -88,8 +88,9 @@ def get_paper():
         if check_database(file_dir, s_id):
             papers.append(paper)
             new_ids.append(s_id)
-    if len(new_ids) != 0:
-        write_db(file_dir,new_ids)
+    if len(new_ids) == 0:
+            new_ids.append("dammy")
+    write_db(file_dir,new_ids)
         
     return papers
 
