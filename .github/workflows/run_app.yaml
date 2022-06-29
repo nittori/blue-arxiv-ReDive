@@ -31,4 +31,5 @@ jobs:
             SLACK_APP_TOKEN: ${{secrets.APP_LEVEL_TOKEN}}
             SLACK_BOT_TOKEN: ${{secrets.BOT_USER_OAUTH_TOKEN}}
             channel_id: ${{secrets.CHANNEL_ID}}
+            DATABASE_URL: ${{secrets.DATABASE_URL}}
 
