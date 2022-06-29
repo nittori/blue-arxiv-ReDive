@@ -38,7 +38,7 @@ def main():
                       f"title : {paper['title']}\n"+\
                       f"url : {paper['url']}\n"
             print(message)
-            #post_message(message)
+            post_message(message)
         return 1
     
 if __name__ == "__main__":
