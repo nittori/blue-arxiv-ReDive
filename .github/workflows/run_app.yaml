@@ -13,9 +13,6 @@ on:
 jobs:
   run-main:
     runs-on: ubuntu-latest
-    env:
-     token: ${{secrets.GITHUB_TOKEN}}
-     repo: ${{github.repository}}
     steps:
       - uses: actions/checkout@v2
       - name: Setup Python
