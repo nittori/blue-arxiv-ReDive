@@ -7,7 +7,7 @@ import csv
 import psycopg2
 
 def au_search(author):
-  search = arxiv.Search(query ='au:"'+author+'"',max_results = 1,sort_by = arxiv.SortCriterion.SubmittedDate)
+  search = arxiv.Search(query =f'au:{author}',max_results = 1,sort_by = arxiv.SortCriterion.SubmittedDate)
   return search
 
 def read_config(file_dir):
