@@ -84,7 +84,7 @@ def get_paper():
         paper = {"author" : author,\
                  "title" : result.title,\
                  "published" : result.published,\
-                 "url" : result.pdf_url }
+                 "url" : result.entry_id }
             
         if check_db(file_dir, s_id):
             papers.append(paper)
